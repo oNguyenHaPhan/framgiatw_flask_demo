@@ -16,8 +16,6 @@ RUN pyvenv venv
 
 WORKDIR /venv
 
-RUN SOURCE venv/bin/activate
-
 COPY requirements.txt /venv
 
 RUN pip install -r requirement.txt
