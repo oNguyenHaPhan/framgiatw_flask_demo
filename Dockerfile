@@ -12,7 +12,7 @@ RUN apt install -y python python-dev python-pip python-virtualenv
 
 RUN pip install --upgrade pip
 
-COPY requirements.txt /venv
+COPY requirements.txt /venv/requirements.txt
 
 WORKDIR /venv
 
