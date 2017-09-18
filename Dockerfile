@@ -43,6 +43,6 @@ COPY run.py /venv/run.py
 
 EXPOSE 5000
 
-CMD ["python", "run.py"]
+CMD ["python", "/venv/run.py", "-p 5000"]
 
 
