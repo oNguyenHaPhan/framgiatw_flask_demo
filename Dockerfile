@@ -8,7 +8,7 @@ RUN apt update
 
 RUN mkdir /venv
 
-RUN apt install -y puthon python-dev python-pip python-virtualenv
+RUN apt install -y python python-dev python-pip python-virtualenv
 
 RUN pip install --upgrade pip
 
