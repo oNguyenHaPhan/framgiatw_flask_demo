@@ -39,10 +39,10 @@ COPY seed.py /venv/seed.py
 
 CMD ["python", "seed.py"]
 
-COPY run.py /venv/run.py
+COPY run.py /venv/src/run.py
 
 EXPOSE 5000
 
-CMD ["python", "/venv/run.py", "-p 5000"]
+CMD ["python", "/venv/src/run.py", "-p 5000"]
 
 
