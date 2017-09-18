@@ -38,3 +38,11 @@ RUN alembic revision -m "Create users table"
 COPY seed.py /venv/seed.py
 
 CMD ["python", "seed.py"]
+
+COPY run.py /venv/run.py
+
+RUN ufw allow 5000
+
+CMD ["python", "run.py"]
+
+
