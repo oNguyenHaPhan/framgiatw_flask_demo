@@ -16,4 +16,4 @@ RUN pyvenv venv
 
 COPY requirements.txt /venv
 
-RUN pip install -r requirement.txt
+RUN pip3 install -r requirement.txt
