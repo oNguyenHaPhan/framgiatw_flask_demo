@@ -14,8 +14,6 @@ WORKDIR /environments
 
 RUN pyvenv venv
 
-WORKDIR /venv
-
 COPY requirements.txt /venv
 
 RUN pip install -r requirement.txt
