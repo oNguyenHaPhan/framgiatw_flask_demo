@@ -16,4 +16,4 @@ COPY requirements.txt /venv/requirements.txt
 
 WORKDIR /venv
 
-RUN pip install -r requirement.txt
+RUN pip install -r requirements.txt
