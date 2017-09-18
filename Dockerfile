@@ -6,11 +6,7 @@ RUN DEBIAN_FRONTEND=noninteractive
 
 RUN apt update
 
-RUN apt install -y python3-pip
-
-RUN apt install build-essential libssl-dev libffi-dev python3-dev
-
-RUN apt install -y python3-venv
+RUN apt install -y python3-pip build-essential libssl-dev libffi-dev python3-dev python3-venv
 
 RUN mkdir environments
 
