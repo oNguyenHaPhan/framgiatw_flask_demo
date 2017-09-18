@@ -41,9 +41,7 @@ CMD ["python", "seed.py"]
 
 COPY run.py /venv/run.py
 
-RUN sudo apt install -y ufw
-
-RUN ufw allow 5000
+EXPOSE 5000
 
 CMD ["python", "run.py"]
 
