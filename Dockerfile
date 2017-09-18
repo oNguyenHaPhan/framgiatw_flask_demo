@@ -6,13 +6,13 @@ RUN DEBIAN_FRONTEND=noninteractive
 
 RUN apt update
 
-RUN apt install -y python-pip build-essential libssl-dev libffi-dev python-dev python-venv
+RUN mkdir /venv
+
+RUN apt install -y puthon python-dev python-pip python-virtualenv
 
 RUN pip install --upgrade pip
 
-RUN mkdir -p venv
-
-COPY requirements.txt /venv/requirements.txt
+COPY requirements.txt /venv
 
 WORKDIR /venv
 
