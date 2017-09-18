@@ -14,7 +14,9 @@ WORKDIR /environments
 
 RUN pyvenv venv
 
-WORKDIR venv
+WORKDIR /venv
+
+RUN SOURCE venv/bin/activate
 
 COPY requirements.txt /venv
 
