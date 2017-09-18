@@ -41,6 +41,8 @@ CMD ["python", "seed.py"]
 
 COPY run.py /venv/run.py
 
+RUN apt install ufw
+
 RUN ufw allow 5000
 
 CMD ["python", "run.py"]
