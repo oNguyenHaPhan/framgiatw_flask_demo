@@ -34,5 +34,3 @@ RUN alembic init --template generic alembic
 RUN sed -i -e 's/sqlalchemy.url.*/sqlalchemy.url = mysql:\/\/root:root@localhost\/framgiatw/g' alembic.ini
 
 RUN alembic revision -m "Create users table"
-
-RUN alembic upgrade head
