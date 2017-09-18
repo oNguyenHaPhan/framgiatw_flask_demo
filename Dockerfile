@@ -37,8 +37,6 @@ RUN alembic revision -m "Create users table"
 
 COPY seed.py /venv/seed.py
 
-COPY app /venv/app/
-
 CMD ["python", "/venv/seed.py"]
 
 COPY run.py /venv/run.py
