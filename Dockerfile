@@ -35,14 +35,16 @@ RUN sed -i -e 's/sqlalchemy.url.*/sqlalchemy.url = mysql:\/\/root:root@localhost
 
 RUN alembic revision -m "Create users table"
 
-COPY seed.py /venv/src/seed.py
+COPY seed.py /venv/seed.py
 
-CMD ["python", "/venv/src/seed.py"]
+COPY app /venv/app/
 
-COPY run.py /venv/src/run.py
+CMD ["python", "/venv/seed.py"]
+
+COPY run.py /venv/run.py
 
 EXPOSE 5000
 
-CMD ["python", "/venv/src/run.py", "-p 5000"]
+CMD ["python", "/venv/run.py", "-p 5000"]
 
 
