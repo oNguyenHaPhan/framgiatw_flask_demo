@@ -16,4 +16,6 @@ COPY requirements.txt /venv/requirements.txt
 
 WORKDIR /venv
 
+RUN apt-get install -y libmysqlclient-dev
+
 RUN pip install -r requirements.txt
