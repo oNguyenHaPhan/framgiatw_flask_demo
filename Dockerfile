@@ -27,7 +27,9 @@ RUN echo "mysql-server mysql-server/root_password password root" | debconf-set-s
     && echo "mysql-server mysql-server/root_password_again password root" | debconf-set-selections \
     && apt-get install -y mysql-server
     
-RUN /bin/bash mysql service start
+RUN /bin/bash
+
+RUN mysql service start
     
 RUN pip install alembic
 
