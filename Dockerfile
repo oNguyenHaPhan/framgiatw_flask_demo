@@ -31,12 +31,12 @@ RUN pip install alembic
 
 RUN alembic revision -m "Create users table"
 
-RUN chmod a+x start_service_mysql.sh
+# RUN chmod a+x start_service_mysql.sh
 
-ENTRYPOINT ["/start_service_mysql.sh"]
+# ENTRYPOINT ["/start_service_mysql.sh"]
 
-RUN python seed.py
+# RUN python seed.py
 
-EXPOSE 5000
+# EXPOSE 5000
 
-CMD ["python", "run.py"]
+# CMD ["python", "run.py"]
