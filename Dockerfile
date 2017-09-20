@@ -6,7 +6,9 @@ RUN DEBIAN_FRONTEND=noninteractive
 
 RUN apt update
 
-RUN mkdir /venv
+ADD . /venv
+
+WORKDIR /venv
 
 RUN apt install -y python python-dev python-pip python-virtualenv
 
@@ -34,10 +36,6 @@ RUN alembic init --template generic alembic
 RUN sed -i -e 's/sqlalchemy.url.*/sqlalchemy.url = mysql:\/\/root:root@localhost\/framgiatw/g' alembic.ini
 
 RUN alembic revision -m "Create users table"
-
-ADD . /app
-
-WORKDIR /app
 
 RUN chmod a+x start_service_mysql.sh
 
