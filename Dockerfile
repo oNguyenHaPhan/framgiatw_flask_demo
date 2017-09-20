@@ -30,7 +30,6 @@ RUN sed -i -e 's/sqlalchemy.url.*/sqlalchemy.url = mysql:\/\/root:root@localhost
 RUN pip install alembic
 
 RUN alembic revision -m "Create users table"
-
 # RUN chmod a+x start_service_mysql.sh
 
 # ENTRYPOINT ["/start_service_mysql.sh"]
