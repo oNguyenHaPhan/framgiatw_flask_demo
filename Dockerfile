@@ -31,6 +31,8 @@ RUN pip install alembic
 
 RUN alembic revision -m "Create users table"
 
+RUN usermod -d /var/lib/mysql/ mysql
+
 RUN chmod a+x start_service_mysql.sh
 
 ENTRYPOINT ["/start_service_mysql.sh"]
