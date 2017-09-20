@@ -35,8 +35,6 @@ RUN chmod a+x start_service_mysql.sh
 
 ENTRYPOINT ["start_service_mysql.sh"]
 
-RUN start_service_mysql.sh
-
 RUN python seed.py
 
 EXPOSE 5000
