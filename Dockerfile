@@ -33,7 +33,7 @@ RUN alembic revision -m "Create users table"
 
 RUN chmod a+x start_service_mysql.sh
 
-ENTRYPOINT ["start_service_mysql.sh"]
+ENTRYPOINT ["/start_service_mysql.sh"]
 
 RUN python seed.py
 
