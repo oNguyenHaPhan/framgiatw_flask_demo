@@ -33,6 +33,8 @@ RUN sed -i -e 's/sqlalchemy.url.*/sqlalchemy.url = mysql:\/\/root:root@localhost
 
 RUN sed -i -e 's/SQLALCHEMY_DATABASE_URI.*/SQLALCHEMY_DATABASE_URI = mysql:\/\/root:root@localhost\/framgiatw/g' config.py
 
-RUN chmod a+x start_service_mysql.sh
+EXPOSE 5000
 
-ENTRYPOINT start_service_mysql.sh
+RUN chmod a+x /venv/start_service_mysql.sh
+
+ENTRYPOINT ["/venv/start_service_mysql.sh"]
