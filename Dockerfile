@@ -29,7 +29,7 @@ RUN pip install alembic
 
 RUN alembic revision -m "Create users table"
 
-RUN sed -i -e 's/sqlalchemy.url.*/sqlalchemy.url = mysql:\/\/root:root@localhost\/framgiatw/g' alembic.ini
+# RUN sed -i -e 's/sqlalchemy.url.*/sqlalchemy.url = mysql:\/\/root:root@localhost\/framgiatw/g' alembic.ini
 
 RUN apt install nano
 
