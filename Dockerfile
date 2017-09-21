@@ -31,6 +31,8 @@ RUN alembic revision -m "Create users table"
 
 RUN sed -i -e 's/sqlalchemy.url.*/sqlalchemy.url = mysql:\/\/root:root@localhost\/framgiatw/g' alembic.ini
 
+RUN apt install nano
+
 # RUN sed -i -e 's/SQLALCHEMY_DATABASE_URI.*/SQLALCHEMY_DATABASE_URI = mysql:\/\/root:root@localhost\/framgiatw/g' config.py
 
 # EXPOSE 5000
