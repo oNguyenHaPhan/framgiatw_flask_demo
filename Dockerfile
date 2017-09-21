@@ -25,20 +25,12 @@ RUN echo "mysql-server mysql-server/root_password password root" | debconf-set-s
     && echo "mysql-server mysql-server/root_password_again password root" | debconf-set-selections \
     && apt-get install -y mysql-server
 
-RUN sed -i -e 's/sqlalchemy.url.*/sqlalchemy.url = mysql:\/\/root:root@localhost\/framgiatw/g' alembic.ini
-
 RUN pip install alembic
 
 RUN alembic revision -m "Create users table"
 
-RUN usermod -d /var/lib/mysql/ mysql
+RUN sed -i -e 's/sqlalchemy.url.*/sqlalchemy.url = mysql:\/\/root:root@localhost\/framgiatw/g' alembic.ini
 
 RUN chmod a+x start_service_mysql.sh
 
-ENTRYPOINT ["/start_service_mysql.sh"]
-
-RUN python seed.py
-
-EXPOSE 5000
-
-CMD ["python", "run.py"]
+ENTRYPOINT start_service_mysql.sh
