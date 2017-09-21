@@ -1,8 +1,7 @@
-UP=$(pgrep mysql | wc -l);
-if [ "$UP" -ne 1 ];
-then
-  echo "MySQL is down.";
-  sudo service mysql start
-else
-  echo "All is well.";
-fi
+#!/bin/bash
+
+service mysql start
+mysql -uroot -proot "CREATE DATABASE "framgiatw""
+python seed.py
+python run.py
+exec $@
