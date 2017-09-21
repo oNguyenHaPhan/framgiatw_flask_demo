@@ -31,10 +31,10 @@ RUN alembic revision -m "Create users table"
 
 RUN sed -i -e 's/sqlalchemy.url.*/sqlalchemy.url = mysql:\/\/root:root@localhost\/framgiatw/g' alembic.ini
 
-RUN sed -i -e 's/SQLALCHEMY_DATABASE_URI.*/SQLALCHEMY_DATABASE_URI = mysql:\/\/root:root@localhost\/framgiatw/g' config.py
+# RUN sed -i -e 's/SQLALCHEMY_DATABASE_URI.*/SQLALCHEMY_DATABASE_URI = mysql:\/\/root:root@localhost\/framgiatw/g' config.py
 
-EXPOSE 5000
+# EXPOSE 5000
 
-RUN chmod a+x /venv/start_service_mysql.sh
+# # RUN chmod a+x /venv/start_service_mysql.sh
 
-ENTRYPOINT ["/venv/start_service_mysql.sh"]
+# # ENTRYPOINT ["/venv/start_service_mysql.sh"]
